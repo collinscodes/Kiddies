@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome.B/css/all.css">
+    <style>
+        *{
+          box-sizing: border-box;
+      }
+      body{
+           margin: 0;
+           border: 0;
+           font-family: sans-serif;
+           background-color: rgb(202, 255, 202);
+      }
+      .navbar{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: rgb(45, 170, 45);
+      }
+      .schoolname{
+          font-size: 30px;
+          margin: 1rem;
+          color: white;
+          margin-left: 80px;
+          font-weight: bold;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .navbar-links ul{
+          margin: 0;
+          padding: 0;
+          display: flex;
+      }
+      .navbar-links li{
+          list-style: none; 
+      }
+      .navbar-links li a{
+           text-decoration: none;
+           margin-right: 70px;
+           padding: 8px;
+           display: block;
+           font-size: 15px;
+           color: white;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      } 
+      .navbar-links li a:hover{
+            background-color: rgb(1, 56, 1);
+            color: #fff;
+            transition-duration: 1.5s;
+        } 
+        .navbar-links li a:focus{
+            background-color: rgb(1, 56, 1);
+        } 
+        .toggle-button{
+            position: absolute;
+            top: 2rem;
+            right: 1rem;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 31px;
+            height: 21px;
+        }
+        .toggle-button .bar{
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        @media (max-width:850px) {
+            .toggle-button{
+                display: flex;
+            }
+            .navbar-links{
+                display: none;
+                width: 100%;
+            }
+            .navbar{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar-links ul{
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar-links li{
+                text-align: center;
+                background-color: rgb(41, 77, 41);
+            }
+            .navbar-links.active{
+                display: flex;
+            }
+            .schoolname{
+                    font-size: 30px;
+                    margin: .5rem;
+                    padding-right: 50px;
+        }
+        .navbar-links li a {
+            text-decoration: none;
+            color: white;
+            padding-right: 3rem;
+            display: block;
+            font-size: 15px;
+        }
+        .navbar-links li a:hover{
+            opacity: 0.5;
+        }
+             }
+      .our{
+             text-align: center;
+             font-family: sans-serif;
+             margin-top: 50px;  
+         }
+         .our h1{
+             font-size: 35px;
+             color: rgb(2, 85, 2);
+         }
+         .our-sch{
+             font-size: 15px;
+             margin-top: 30px;
+             color: rgb(1, 46, 1);
+         }
+         .our-schp{
+             margin-top: -15px;
+         }
+         @media (max-width:850px) {
+            .our{
+             text-align: center;
+             font-family: sans-serif;
+             margin-top: 50px;
+                
+         }
+         .our h1{
+             font-size: 28px;
+             color: rgb(2, 85, 2);
+         }
+         .our-sch{
+             font-size: 15px;
+             margin-top: 30px;
+             color: rgb(1, 46, 1);
+         }
+         .our-schp{
+             margin-top: -15px;
+             font-size: 15px;
+         }
+         }
+         @media (max-width:450px) {
+            .our{
+             text-align: center;
+             font-family: sans-serif;
+             margin-top: 50px;
+                
+         }
+         .our h1{
+             font-size: 20px;
+             color: rgb(2, 85, 2);
+         }
+         .our-sch{
+             font-size: 13px;
+             margin-top: 30px;
+             color: rgb(1, 46, 1);
+         }
+         .our-schp{
+             margin-top: -15px;
+             font-size: 13px;
+         }
+         }
+           .pic{
+               display: flex;
+               margin-top: 25px;
+               text-align: center;
+               align-items: center;
+               margin-left: 180px;
+           }
+           .pic p{
+               text-align: center;
+           }
+           .pic-col figcaption{
+               position: relative;
+               top: -92px;
+               width: 280px;
+               background-color: #fffdf5;
+               padding: 8px;
+               margin-top: -5px;
+           }
+           .pic-col2 figcaption{
+            position: relative;
+               top: -92px;
+               width: 280px;
+               background-color: #fffdf5;
+               padding: 8px;
+               margin-top: -5px;
+           }
+           .pic-col2{
+               margin-left: 50px;
+           }
+           .pic-col3{
+               margin-left: 50px;
+           }
+           .pic-col3 figcaption{
+            position: relative;
+               top: -92px;
+               width: 280px;
+               background-color: #fffdf5;
+               padding: 8px;
+               margin-top: -5px;
+           }
+           @media (max-width: 850px) {
+            .pic{
+               display: flex;
+               margin-top: 25px;
+               max-width: 650px;
+               text-align: center;
+               align-items: center;
+           }
+           .pic img{
+                width: 200px;
+           }
+           .pic h3{
+               text-align: center;
+               font-size: 18px;
+           }
+           .pic p{
+               text-align: center;
+               font-size: 14px;
+           }
+           .pic-col figcaption{
+               position: relative;
+               top: -72px;
+               width: 200px;
+               background-color: #fffdf5;
+               margin-top: -5px;
+           }
+           .pic-col2 figcaption{
+            position: relative;
+               top: -72px;
+               width: 200px;
+               background-color: #fffdf5;
+               margin-top: -5px;
+           }
+           .pic-col2{
+               margin-left: 5px;
+           }
+           .pic-col3{
+               margin-left: 5px;
+           }
+           .pic-col3 figcaption{
+            position: relative;
+               top: -72px;
+               width: 200px;
+               background-color: #fffdf5;
+               margin-top: -5px;
+           }
+           }
+           @media (max-width: 450px) {
+            .pic{
+               display: block;
+               margin-top: 20px;
+               max-width: 400px;
+               text-align: center;
+               align-content: center;
+               margin-left: auto;
+               margin-right: auto;
+           }
+           .pic img{
+                width: 120px;
+                height: 150px;
+           }
+           .pic h3{
+               text-align: center;
+               font-size: 15px;
+           }
+           .pic p{
+               text-align: center;
+               font-size: 13px;
+           }
+           .pic-col figcaption{
+               width: 120px;
+               background-color: #fffdf5;
+                position: relative;
+               height: 60px;
+               top: -40px;
+               left: 120px;
+           }
+           .pic-col2 figcaption{
+            position: relative;
+               top: -40px;
+               width: 120px;
+               background-color: #fffdf5;
+               left: 118px;
+               height: 60px;
+           }
+           .pic-col2{
+               margin-left: 5px;
+           }
+           .pic-col3{
+               margin-left: 5px;
+           }
+           .pic-col3 figcaption{
+            position: relative;
+               top: -40px;
+               width: 120px;
+               height: 60px;
+               background-color: #fffdf5;
+               left: 118px;
+           }
+           }
+           @media (max-width: 300px){
+            .pic-col figcaption{
+               position: relative;
+               top: -40px;
+               width: 120px;
+               background-color: #fffdf5;
+               margin-top: -5px;
+               left: 80px;
+               padding: 0%;
+           }
+           .pic-col2 figcaption{
+            position: relative;
+               top: -40px;
+               width: 120px;
+               background-color: #fffdf5;
+               margin-top: -5px;
+               left: 78px;
+               padding: 0%;
+           }
+            .pic-col3 figcaption{
+            position: relative;
+               top: -40px;
+               width: 120px;
+               background-color: #fffdf5;
+               margin-top: -5px;
+               left: 78px;
+               padding: 0%;
+           }
+           }
+           .section{
+            width: 100%;
+            margin-left: -50px;
+        }
+        .section .container{
+            width: 90%;
+            display: block;
+            margin: 0px auto;
+            padding: 50px, 0px;
+            margin-top: 30px;
+        }
+        .container .title{
+            width: 100%;
+        }
+        .container .title h1{
+            text-transform: uppercase;
+            font-size: 35px;
+            color: darkgreen;
+        }
+        .article p{
+            color: rgb(0, 51, 0);
+        }
+        .content{
+            float: left;
+            width: 55%;
+        }
+        .content h1{
+            text-transform: uppercase;
+            font-size: 35px;
+            color: darkgreen;
+            margin-top: 50px;
+        }
+        .image section{
+            float: right;
+            width: 10%;
+        }
+        .image-section img{
+            height: 500px;
+            width: 600px;
+            margin-left: 640px;
+            margin-top: -550px;
+        }
+        .container .social{
+            width: 100%;
+            clear: both;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .container .social i{
+            height: 45px;
+            width: 45px;   
+            border-radius: 50%;
+            color: #fff; 
+            background-color: green;
+            margin: 0px, 5px;
+            line-height: 45px;
+            text-align: center;
+            font-size: 25px;
+        }
+        .container .social i:hover{
+            color: #fff;
+            background-color: rgb(5, 224, 5);
+            transition: 1s ease;
+            transform: rotate(360deg);
+        }
+        @media (max-width: 850px) {
+            .section{
+            width: 100%;
+            margin-left: -50px;
+        }
+        .section .container{
+            width: 90%;
+            display: block;
+            margin: 0px auto;
+            padding: 30px, 0px;
+            margin-top: 20px;
+        }
+        .container .title{
+            width: 100%;
+        }
+        .container .title h1{
+            text-transform: uppercase;
+            font-size: 28px;
+            color: darkgreen;
+        }
+        .article p{
+            color: rgb(0, 51, 0);
+        }
+        .content{
+            float: left;
+            width: 45%;
+        }
+        .content h1{
+            text-transform: uppercase;
+            font-size: 28px;
+            color: darkgreen;
+            margin-top: 40px;
+        }
+        .image section{
+            float: right;
+            width: 10%;
+        }
+        .image-section img{
+            height: 600px;
+            width: 430px;
+            margin-left: 350px;
+            margin-top: -800px;
+        }
+        .container .social{
+            width: 100%;
+            clear: both;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .container .social i{
+            height: 40px;
+            width: 40px;   
+            border-radius: 50%;
+            color: #fff; 
+            background-color: green;
+            margin: 0px, 5px;
+            line-height: 45px;
+            text-align: center;
+            font-size: 25px;
+        }
+        .container .social i:hover{
+            color: #fff;
+            background-color: rgb(5, 224, 5);
+            transition: 1s ease;
+            transform: rotate(360deg);
+        }  
+        }
+        @media (max-width: 450px) {
+            .section{
+            width: 100%;
+            margin-left: 10px;
+        }
+        .section .container{
+            width: 90%;
+            margin: 0px auto;
+            padding: 20px, 0px;
+            margin-top: 10px;
+        }
+        .container .title{
+            width: 100%;
+        }
+        .container .title h1{
+            text-transform: uppercase;
+            font-size: 20px;
+            color: darkgreen;
+        }
+        .article p{
+            color: rgb(0, 51, 0);
+        }
+        .content{
+            width: 100%;
+        }
+        .content h1{
+            text-transform: uppercase;
+            font-size: 20px;
+            color: darkgreen;
+            margin-top: 40px;
+        }
+        .image-section{
+               float: none;
+               width: 100%;
+               margin-top: 50px;
+           }
+           .image-section img{
+               width: 100%;
+               height: auto;
+               display: block;
+               margin: auto;
+           }
+        .container .social{
+            width: 100%;
+            clear: both;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .container .social i{
+            height: 40px;
+            width: 40px;   
+            border-radius: 50%;
+            color: #fff; 
+            background-color: green;
+            margin: 0px, 5px;
+            line-height: 45px;
+            text-align: center;
+            font-size: 25px;
+        }
+        .container .social i:hover{
+            color: #fff;
+            background-color: rgb(5, 224, 5);
+            transition: 1s ease;
+            transform: rotate(360deg);
+        }
+    }  
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="schoolname">Kiddies</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="school.html">HOME</a></li>
+                <li><a href="schaboutus.html">ABOUT US</a></li>
+                <li><a href="schcourse.html">COURSES</a></li>
+                <li><a href="schcontactus.html">CONTACT US</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="our">
+           <h1>We are a team of experienced teachers</h1>
+           <div class="our-sch">
+           <p>At Kiddies your child will be taught by some of <br> the finest teachers in the world</p> 
+           </div>
+           <div class="our-schp">
+           <p>Our teachers are seasoned with vast experience <br> and passion for teaching.</p>
+           </div>
+    </div>
+
+    <div class="pic">
+        <div class="pic-col">
+             <img src="schaboutus1.jpg" width="280px" height="280px">
+             <figcaption><h3>-Awodu Collins</h3><p>Founder</p></figcaption>
+        </div>
+        <div class="pic-col2">
+            <img src="schaboutus3.jpeg" width="280px" height="280px">
+            <figcaption><h3>-Harry Smith</h3> <p>Administrator</p></figcaption>
+       </div>
+       <div class="pic-col3">
+        <img src="schaboutus2.jpeg" width="280px" height="280px">
+        <figcaption><h3>-Charlotte</h3><p>Head Teacher</p></figcaption>
+    </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="title">
+                <h1>Our School</h1>
+            </div>
+            <div class="content">
+                <div class="article">
+                <p>At our school we believe there is a better platform where you can learn online beyond the walls of your classroom of school. We're very passionate about it and it is our mission to make people achieve it. We focus on educating children on the different courses they were being taught in the class. For those who already have a kmowledge about it, We teach them better and easier approaches so as to make them world class students. We also accomodate questions so as to explain what they don't understand and to also clear some of the doubts in the hearts our students .</p>
+                <h1>Our Mission</h1>
+                <p>"To foster our student's love for learning, encourage them to try new and exciting things, and to prepare students to contribute to and succeed in a rapidly changing society."</p>
+                <h1>Our Vision</h1>
+                <p>"To develop well rounded, confident and responsible students and also to give them a solid foundation to build on and help students who aspire to reach their full potential."</p>
+                </div>
+               </div>
+               <div class="image-section">
+                   <img src="schaboutus4.jpg">
+               </div>
+               <div class="social">
+                <a href=""><i class="fab fa-twitter fa-2x"></i></a>
+                <a href=""><i class="myinsta fab fa-instagram fa-2x"></i></a>
+                <a href=""><i class="fab fa-facebook fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const toggleButton = document.getElementsByClassName('toggle-button')[0]
+ const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+ 
+ toggleButton.addEventListener('click', () =>{
+     navbarLinks.classList.toggle('active')
+ })
+    </script>   
+</body>
+</html>

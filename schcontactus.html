@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome.B/css/all.css">
+<style>
+      *{
+          box-sizing: border-box;
+      }
+      body{
+           margin: 0;
+           border: 0;
+           font-family: sans-serif;
+           background-color: rgb(202, 255, 202);
+      }
+      .navbar{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: rgb(45, 170, 45);
+      }
+      .schoolname{
+          font-size: 30px;
+          margin: 1rem;
+          color: white;
+          margin-left: 80px;
+          font-weight: bold;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .navbar-links ul{
+          margin: 0;
+          padding: 0;
+          display: flex;
+      }
+      .navbar-links li{
+          list-style: none;
+      }
+      .navbar-links li a{
+           text-decoration: none;
+           margin-right: 70px;
+           padding: 8px;
+           display: block;
+           font-size: 15px;
+           color: white;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      } 
+      .navbar-links li a:hover{
+            background-color: rgb(1, 56, 1);
+            color: #fff;
+            transition-duration: 1.5s;
+        } 
+        .navbar-links li a:focus{
+            background-color: rgb(1, 56, 1);
+        }
+        .toggle-button{
+            position: absolute;
+            top: 2rem;
+            right: 1rem;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 31px;
+            height: 21px;
+        }
+        .toggle-button .bar{
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        @media (max-width:850px) {
+            .toggle-button{
+                display: flex;
+            }
+            .navbar-links{
+                display: none;
+                width: 100%;
+            }
+            .navbar{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar-links ul{
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar-links li{
+                text-align: center;
+                background-color: rgb(41, 77, 41);
+            }
+            .navbar-links.active{
+                display: flex;
+            }
+            .schoolname{
+                    font-size: 30px;
+                    margin: .5rem;
+                    padding-right: 50px;
+        }
+        .navbar-links li a {
+            text-decoration: none;
+            color: white;
+            padding-right: 3rem;
+            display: block;
+            font-size: 15px;
+        }
+        .navbar-links li a:hover{
+            opacity: 0.5;
+        }
+             }
+        .contact{
+               display: flex;
+               text-align: center;
+               margin: auto;
+           }
+           .contact h5{
+               text-align: center;
+               font-weight: bold;
+               margin-top: 20px;
+               font-size: 18px;
+               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           }
+           .contact p{
+               text-align: center;
+               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           }
+           .our{
+               background-color: #fff;
+               width: 240px; 
+               height: 220px; 
+               padding: 15px 15px;
+               margin-left: 100px;
+               margin-top: 40px;
+           }
+           .phone{
+               background-color: #fff;
+               width: 240px;
+               height: 220px; 
+               padding: 15px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+           }
+           .fax{
+               background-color: #fff;
+               width: 240px;
+               height: 220px;  
+               padding: 15px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+           }
+           .email{
+               background-color: #fff;
+               width: 240px;
+               height: 220px;  
+               padding: 15px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+               text-decoration: underline;
+           }
+           .work{
+               background-color: #fff;
+               width: 240px;
+               height: 220px;  
+               padding: 15px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+               margin-right: 100px;
+           }
+           .contact i{
+               color: rgb(45, 170, 45);
+           }
+           @media (max-width: 850px) {
+            .contact{
+               display: flex;
+               text-align: center;
+                align-items: center;
+                justify-content: center;
+                max-width: 700px;
+           }
+           .contact h5{
+               text-align: center;
+               font-weight: bold;
+               margin-top: 20px;
+               font-size: 14px;
+               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           }
+           .contact p{
+               text-align: center;
+               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+               font-size: 10px;
+           }
+           .our{
+               background-color: #fff;
+               width: 220px; 
+               height: 210px; 
+               padding: 5px 15px;
+               margin-left: 100px;
+               margin-top: 40px;
+           }
+           .phone{
+               background-color: #fff;
+               width: 220px; 
+               height: 210px; 
+               padding: 5px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+           }
+           .fax{
+               background-color: #fff;
+               width: 220px; 
+               height: 210px;   
+               padding: 5px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+           }
+           .email{
+               background-color: #fff;
+               width: 220px; 
+               height: 210px;   
+               padding: 5px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+               text-decoration: underline;
+           }
+           .work{
+               background-color: #fff;
+               width: 200px; 
+               height: 210px;   
+               padding: 5px 15px;
+               margin-left: 20px;
+               margin-top: 40px;
+               margin-right: 100px;
+           }
+           }
+           @media (max-width: 450px){
+            .contact{
+               display: block;
+               text-align: center; 
+               margin-top: 20px;
+           }
+           .contact h5{
+               text-align: center;
+               font-weight: bold;
+               margin-top: 20px;
+               font-size: 14px;
+               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           }
+           .contact p{
+               text-align: center;
+               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+               font-size: 10px;
+           }
+           .our{
+               background-color: #fff;
+               width: 150px; 
+               height: 160px; 
+               padding: 5px 15px;
+               margin: 0 auto;
+           }
+           .phone{
+               background-color: #fff;
+               width: 150px; 
+               height: 160px; 
+               padding: 5px 15px;
+               margin: 0 auto;
+               margin-top: 20px;
+           }
+           .fax{
+               background-color: #fff;
+               width: 150px; 
+               height: 160px;   
+               padding: 5px 15px;
+               margin: 0 auto;
+               margin-top: 20px;
+           }
+           .email{
+               background-color: #fff;
+               width: 150px; 
+               height: 160px;   
+               padding: 5px 15px;
+               margin: 0 auto;
+               margin-top: 20px;
+               text-decoration: underline;
+           }
+           .work{
+               background-color: #fff;
+               width: 150px; 
+               height: 160px;   
+               padding: 5px 15px;
+               margin: 0 auto;
+               margin-top: 20px;
+           }
+           }
+           .contact i{
+               color: rgb(45, 170, 45);
+           }
+           .get-in{
+               margin-left: 100px;
+               margin-top: 30px;
+               color: rgb(5, 75, 5);
+           }
+           .get-in-mess{
+               margin-left: 100px;
+               color: rgb(5, 75, 5);
+               margin-right: 100px;
+           }
+           .mess{
+                margin-top: 20px;
+                float: left;
+           }
+           .get-in-mess p{
+               margin-top: -10px;
+               font-size: 16px;
+           }
+           .social{
+               margin-left: 150px;
+               margin-top: 30px;
+           }
+           .social i{
+            height: 35px;
+            width: 35px;   
+            border-radius: 50%;
+            color: #fff; 
+            background-color: green;
+            margin: 0px, 5px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 25px;
+        }
+        .social i:hover{
+            color: #fff;
+            background-color: rgb(5, 224, 5);
+            transition: 1s ease;
+            transform: rotate(360deg);
+        }
+        .container{
+            margin-top: 30px;
+        }
+        .input-box p{
+            margin-top: 20px;
+            font-size: 18px;
+            color: rgb(5, 75, 5);
+        }
+        .input-box input{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  rgb(5, 75, 5);
+            width: 400px;
+            outline: none;
+        }
+        .input-box textarea{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  rgb(5, 75, 5);
+            width: 400px;
+            outline: none;
+            height: 100px;
+        }
+        .submit-btn{
+               position: relative;
+               background-color: rgb(5, 75, 5);
+               color: #fff;
+               border: none;
+               height: 32px;
+               width: 400px;
+               font-size: 12px;
+               padding: 0 13px;
+               box-sizing: border-box;
+               outline: none;
+               color: #fff;
+               cursor: pointer;
+               margin-left: 565px;
+               margin-top: 10px;
+               margin-bottom: 50px;
+           }
+           @media (max-width: 850px) {
+            .get-in{
+               color: rgb(5, 75, 5);
+               font-size: 16px;
+           }
+           .getto{
+                margin: 0 auto;
+                margin-top: 30px;
+           }
+           .get-in-mess{ 
+               color: rgb(5, 75, 5);
+               margin-right: 50px;
+               max-width: 250px;
+           }
+           .mess{
+                float: left;
+           }
+           .get-in-mess p{
+               font-size: 14px;
+           }
+           .social{
+               margin-left: 150px;
+               margin-top: 20px;
+           }
+           .social i{
+            height: 35px;
+            width: 35px;   
+            border-radius: 50%;
+            color: #fff; 
+            background-color: green;
+            margin: 0px, 5px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 25px;
+        }
+        .social i:hover{
+            color: #fff;
+            background-color: rgb(5, 224, 5);
+            transition: 1s ease;
+            transform: rotate(360deg);
+        }
+        .container{
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+        .input-box p{
+            margin-top: 20px;
+            font-size: 18px;
+            color: rgb(5, 75, 5);
+        }
+        .input-box input{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  rgb(5, 75, 5);
+            width: 300px;
+            outline: none;
+        }
+        .input-box textarea{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  rgb(5, 75, 5);
+            width: 300px;
+            outline: none;
+            height: 100px;
+            margin-top: -10px;
+        }
+        .submit-btn{
+               background-color: rgb(5, 75, 5);
+               color: #fff;
+               border: none;
+               height: 32px;
+               width: 300px;
+               font-size: 12px;
+               padding: 0 13px;
+               box-sizing: border-box;
+               outline: none;
+               color: #fff;
+               cursor: pointer;
+               margin-left: 305px;
+               margin-top: 10px;
+           }
+           }
+           @media (max-width: 450px) {
+            .get-in{
+               color: rgb(5, 75, 5);
+               font-size: 14px;
+               margin-left: -20px;
+           }
+           .getto{
+                margin-top: 30px;
+                display: inline-block;
+                text-align: center;
+           }
+           .get-in-mess{ 
+               color: rgb(5, 75, 5);
+                margin-left: 40px;
+           }
+           .get-in-mess p{
+               font-size: 12px;
+           }
+           .social{
+               display: none;
+           }
+           .social i{
+            height: 35px;
+            width: 35px;   
+            border-radius: 50%;
+            color: #fff; 
+            background-color: green;
+            margin: 0px, 5px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 25px;
+        }
+        .social i:hover{
+            color: #fff;
+            background-color: rgb(5, 224, 5);
+            transition: 1s ease;
+            transform: rotate(360deg);
+        }
+        .container{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .input-box p{
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(5, 75, 5);
+        }
+        .input-box input{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  rgb(5, 75, 5);
+            width: 200px;
+            outline: none;
+        }
+        .input-box textarea{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  rgb(5, 75, 5);
+            width: 200px;
+            outline: none;
+            height: 100px;
+            margin-top: -10px;
+        }
+        .submit-btn{
+               background-color: rgb(5, 75, 5);
+               color: #fff;
+               border: none;
+               height: 32px;
+               width: 200px;
+               font-size: 12px;
+               padding: 0 13px;
+               box-sizing: border-box;
+               outline: none;
+               margin: 0 auto;
+               color: #fff;
+               cursor: pointer;
+               margin-top: 10px;
+           }
+           }
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="schoolname">Kiddies</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="school.html">HOME</a></li>
+                <li><a href="schaboutus.html">ABOUT US</a></li>
+                <li><a href="schcourse.html">COURSES</a></li>
+                <li><a href="schcontactus.html">CONTACT US</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="contact">
+          <div class="our">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" color="rgb(45, 170, 45)" fill="currentColor" class="bi
+bi-geo-alt-fill" viewBox="0 0 16 16">
+<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0
+6z"/>
+</svg>
+            <h5>OUR MAIN OFFICE</h5>
+            <P>SoHo 22 Broadway st New York, NY 1001 </P>
+          </div>
+          <div class="phone">
+            <i class="fa fa-phone fa-3x" aria-hidden="true" color="rgb(45, 170, 45)"></i>
+            <h5>PHONE NUMBER</h5>
+            <P> +234-810-808-7526</P>
+            <p> 234-5678-9100(Toll Free)</p>
+          </div>
+          <div class="fax">
+            <i class="fa fa-fax fa-3x" aria-hidden="true" color="rgb(45, 170, 45)"></i>
+            <h5>FAX</h5>
+            <P>1-234-567-8900 </P>
+          </div> 
+          <div class="email">
+            <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
+            <h5>EMAIL</h6>
+            <P>awoducollins@gmail.com</P>
+          </div>
+          <div class="work">
+            <i class="fa fa-clock fa-3x" aria-hidden="true"></i>
+            <h5>WORKING HOURS</h6>
+            <P>Mon - Fri...8 am - 6pm</P>
+            <p>Sat,Sun.....Closed</p>
+          </div>
+    </div>
+    <div class="getto">
+      <div class="get">
+            <div class="get-in">
+                  <h2>Message Us</h2>
+              </div>
+               <div class="mess">
+               <div class="get-in-mess">
+                  <p>Hey! We are looking forward to seeing your feedback.If you would</p>
+                  <p>like to know more about our school feel free to get through to</p>
+                  <p>us. Also if you have any questions regarding some of our classes to </p>
+                  <p>get some clarifications we are always ready to answer the questions</p>
+                  <p> just drop your message and questions in the message box and they</p>
+                  <p> would be answered swifly.</p>
+              </div>
+              <div class="social">
+                  <a href=""><i class="fab fa-twitter fa-2x"></i></a>
+                  <a href=""><i class="myinsta fab fa-instagram fa-2x"></i></a>
+                  <a href=""><i class="fab fa-facebook fa-2x"></i></a>
+              </div>
+              </div>
+            </div>
+               <div class="container">
+                   <div class="input-box">
+                  <form>
+                   <p>Email</p>
+                  <input type="email" placeholder="Enter a valid Email Adress" required>
+                  <p>Name</p>
+                  <input type="text" placeholder="Enter your Name" required>
+                  <p>Message/Question</p>
+                  <textarea  placeholder="Enter your message/Question" required></textarea>
+                 </form>
+                  <button type="submit" class="submit-btn">SUBMIT</button>  
+                   </div>
+                </div>
+    </div>
+    <script>
+        const toggleButton = document.getElementsByClassName('toggle-button')[0]
+        const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+       
+       toggleButton.addEventListener('click', () =>{
+        navbarLinks.classList.toggle('active')
+       })
+    </script> 
+</body>
+</html>
